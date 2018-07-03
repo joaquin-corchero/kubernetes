@@ -1,5 +1,5 @@
 exports.config = {
-    
+
     //
     // ==================
     // Specify Test Files
@@ -46,18 +46,19 @@ exports.config = {
         //
         browserName: 'chrome',
         chromeOptions: {
-          args: [
-            '--disable-extensions',
-            '--enable-logging',
-            '--incognito',
-            '--log-level=0',
-            '--no-sandbox',
-            '--headless',
-            '--disable-gpu',
-            `--profile-directory=Default`,
-            '--use-mobile-user-agent',
-            '--window-size=1920,1080'
-          ]
+            'acceptSslCerts': true,
+            args: [
+                '--disable-extensions',
+                '--enable-logging',
+                '--incognito',
+                '--log-level=0',
+                '--no-sandbox',
+                '--headless',
+                '--disable-gpu',
+                `--profile-directory=Default`,
+                '--use-mobile-user-agent',
+                '--window-size=1920,1080'
+            ]
         }
     }],
     //
@@ -139,7 +140,7 @@ exports.config = {
     // The only one supported by default is 'dot'
     // see also: http://webdriver.io/guide/reporters/dot.html
     reporters: ['dot'],
-    
+
     //
     // Options to be passed to Mocha.
     // See the full list at http://mochajs.org/
@@ -185,7 +186,7 @@ exports.config = {
      */
     // beforeCommand: function (commandName, args) {
     // },
-    
+
     /**
      * Hook that gets executed before the suite starts
      * @param {Object} suite suite details
@@ -222,7 +223,7 @@ exports.config = {
      */
     // afterSuite: function (suite) {
     // },
-    
+
     /**
      * Runs after a WebdriverIO command gets executed
      * @param {String} commandName hook command name
