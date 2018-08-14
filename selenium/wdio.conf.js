@@ -9,6 +9,11 @@ exports.config = {
     // NPM script (see https://docs.npmjs.com/cli/run-script) then the current working
     // directory is where your package.json resides, so `wdio` will be called from there.
     //
+    // Selenium grid settings
+    port: 4444, //port for the grid
+    protocol: 'http', //protocol to be used
+    host: '127.0.0.1', //host dns/ip
+    //
     specs: [
         './test/specs/**/*.js'
     ],
@@ -32,7 +37,7 @@ exports.config = {
     // and 30 processes will get spawned. The property handles how many capabilities
     // from the same test should run tests.
     //
-    maxInstances: 5,
+    maxInstances: 1,
     //
     // If you have trouble getting all important capabilities together, check out the
     // Sauce Labs platform configurator - a great tool to configure your capabilities:
@@ -42,11 +47,11 @@ exports.config = {
         // maxInstances can get overwritten per capability. So if you have an in-house Selenium
         // grid with only 5 firefox instances available you can make sure that not more than
         // 5 instances get started at a time.
-        maxInstances: 5,
+        maxInstances: 1,
         //
         browserName: 'chrome',
         chromeOptions: {
-            'acceptSslCerts': true,
+            //'acceptSslCerts': true,
             args: [
                 '--disable-extensions',
                 '--enable-logging',
@@ -126,7 +131,7 @@ exports.config = {
     // Services take over a specific job you don't want to take care of. They enhance
     // your test setup with almost no effort. Unlike plugins, they don't add new
     // commands. Instead, they hook themselves up into the test process.
-    //services: ['selenium-standalone'],
+    // services: ['selenium-standalone'],
     //
     // Framework you want to run your specs with.
     // The following are supported: Mocha, Jasmine, and Cucumber
